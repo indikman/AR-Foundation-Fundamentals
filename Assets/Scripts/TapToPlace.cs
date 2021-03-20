@@ -26,8 +26,11 @@ public class TapToPlace : MonoBehaviour
     {
         if(Input.touchCount > 0)
         {
-            touchPosition = Input.GetTouch(0).position;
-            return true;
+            if(Input.GetTouch(0).position.y < Screen.height * 3 / 4)
+            {
+                touchPosition = Input.GetTouch(0).position;
+                return true;
+            }
         }
 
         touchPosition = default;
